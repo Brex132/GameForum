@@ -1,0 +1,156 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.forumProblemMessage p {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.leaveAMessage {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px; /* Add padding to the button */
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.header{
+    text-align: center;
+}
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Styling for the forum problem message */
+.forumProblemMessage {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.forumProblemMessage h2 {
+    color: #007bff;
+}
+
+.forumProblemMessage p {
+    margin-bottom: 10px;
+}
+
+/* Styling for the leave a message section */
+.leaveAMessage {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.leaveAMessage h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.leaveAMessage form {
+    margin-bottom: 10px;
+}
+
+.leaveAMessage label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.leaveAMessage input[type="text"] {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+}
+
+.leaveAMessage input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.leaveAMessage input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the comments section */
+.leaveAMessage h2 {
+    margin-top: 20px;
+}
+
+.leaveAMessage ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.leaveAMessage li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+.submitComm{
+    padding-top: 0.5%;
+}
+

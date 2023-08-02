@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DiabloIVForum</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+<div class="forumProblemMessage">
+    <p>
+        <div class="header"><h2>DiabloIvProblem</h2></div>
+        Balance Issues: One potential problem in Diablo 4 could be related to balancing the different character classes, skills, and items.
+        If certain builds or abilities are much stronger than others, it could lead to an imbalance in gameplay, where some players feel forced to use specific builds to be effective, while others become less viable.
+        Server Stability and Online Connectivity:
+        Since Diablo 4 is expected to have online multiplayer components, server stability and connectivity could be a concern.
+        Server crashes, lag, and connection issues could negatively impact players' experiences, especially during high-traffic periods.
+    </p>
+</div>
+
+<div class="leaveAMessage">
+    <h1>Leave a Comment</h1>
+    <form method="post" action="/">
+        <label for="comment">Your comment:</label><br>
+        <input type="text" name="commentText" placeholder="Enter your comment">
+        <div class="submitComm"> <input type="submit" value="Submit Comment"></div>
+    </form>
+    <h2>Comments:</h2>
+    <ul>
+        <li th:each="comment : ${comments}" th:text="${comment.text}"></li>
+    </ul>
+</div>
+</body>
+</html>
