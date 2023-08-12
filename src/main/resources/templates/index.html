@@ -4,30 +4,84 @@
     <meta charset="UTF-8">
     <title>DiabloIVForum</title>
     <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="forumProblemMessage">
     <p>
-        <div class="header"><h2>DiabloIvProblem</h2></div>
-        Balance Issues: One potential problem in Diablo 4 could be related to balancing the different character classes, skills, and items.
-        If certain builds or abilities are much stronger than others, it could lead to an imbalance in gameplay, where some players feel forced to use specific builds to be effective, while others become less viable.
-        Server Stability and Online Connectivity:
-        Since Diablo 4 is expected to have online multiplayer components, server stability and connectivity could be a concern.
-        Server crashes, lag, and connection issues could negatively impact players' experiences, especially during high-traffic periods.
-    </p>
+    <div class="header"><h2>Diablo IV Forum</h2></div>
 </div>
 
-<div class="leaveAMessage">
-    <h1>Leave a Comment</h1>
-    <form method="post" action="/">
-        <label for="comment">Your comment:</label><br>
-        <input type="text" name="commentText" placeholder="Enter your comment">
-        <div class="submitComm"> <input type="submit" value="Submit Comment"></div>
-    </form>
-    <h2>Comments:</h2>
-    <ul>
-        <li th:each="comment : ${comments}" th:text="${comment.text}"></li>
-    </ul>
+
+
+<div class="forum">
+    <div class="top-section">
+        <button id="add-post" data-toggle="modal" data-target="#add-post-modal">Add new topic</button>
+    </div>
+    <div class="list-post">
+
+        <ul>
+            <li th:each="post : ${posts}">
+                <a th:href="@{'/problems?id=' + ${post.id}}" th:text="${post.title}"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="add-post-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/problems" method="post" class="add-post">
+                        <div class="form-group">
+                            <label for="post-title">Title</label>
+                            <input id="post-title"
+                                   class="form-control"
+                                   placeholder="Some witty title"
+                                   type="text"
+                                   name="postTitle"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-content">Content</label>
+                            <input id="post-content"
+                                   class="form-control"
+                                   placeholder="What do you wanna say"
+                                   type="text"
+                                   name="postContent"/>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="submitPost">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
+
+<script>
+    $(document).ready(() => {
+        document.getElementById('submitPost').addEventListener('click', e => {
+            document.querySelector('.add-post').submit();
+        })
+    })
+</script>

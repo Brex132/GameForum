@@ -96,61 +96,24 @@ body {
     margin-bottom: 10px;
 }
 
-/* Styling for the leave a message section */
-.leaveAMessage {
-    border: 1px solid #ddd;
+
+
+
+
+
+.forum {
+    padding: 20px;
+}
+
+.forum .top-section {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+}
+
+.forum .list-post {
     padding: 10px;
+    border: 1px solid #DDD;
 }
 
-.leaveAMessage h1 {
-    text-align: center;
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-.leaveAMessage form {
-    margin-bottom: 10px;
-}
-
-.leaveAMessage label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.leaveAMessage input[type="text"] {
-    width: 100%;
-    height: 30px;
-    padding: 5px;
-}
-
-.leaveAMessage input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.leaveAMessage input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-/* Styling for the comments section */
-.leaveAMessage h2 {
-    margin-top: 20px;
-}
-
-.leaveAMessage ul {
-    list-style: none;
-    margin-top: 10px;
-}
-
-.leaveAMessage li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
-.submitComm{
-    padding-top: 0.5%;
-}
 
