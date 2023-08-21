@@ -38,7 +38,7 @@
     </div>
 
     <div class="comment-section">
-        <div th:each="comment : ${comments}" th:text="${comment.text}"></div>
+        <div th:each="comment : ${comments}" th:text="${comment.text} + ${#temporals.format(comment.created, ' dd-MM-yyyy-HH:mm')}"></div>
     </div>
 </body>
 </html>

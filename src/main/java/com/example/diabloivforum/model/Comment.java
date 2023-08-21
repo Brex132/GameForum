@@ -1,8 +1,11 @@
 package com.example.diabloivforum.model;
 
 import jakarta.persistence.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 @Entity
 public class Comment {
@@ -12,18 +15,31 @@ public class Comment {
     @Column(nullable = false)
     private String text;
 
+    @Column
+    private ZonedDateTime created;
 
     @ManyToOne
     private Problem problem;
+
     public Comment() {
 
     }
 
-    public Comment(Long id, String text) {
+    public Comment(Long id, String text, ZonedDateTime created) {
         this.id = id;
         this.text = text;
+        this.created = created;
+        this.created = ZonedDateTime.now(ZoneId.of("UTC"));
     }
 
+
+    public ZonedDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(ZonedDateTime created) {
+        this.created = created;
+    }
 
     public Problem getProblem() {
         return problem;

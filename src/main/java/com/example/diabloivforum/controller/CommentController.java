@@ -4,12 +4,21 @@ import com.example.diabloivforum.model.Comment;
 import com.example.diabloivforum.model.Problem;
 import com.example.diabloivforum.repository.CommentRepository;
 import com.example.diabloivforum.repository.ProblemRepository;
+import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Clock;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 @Controller
 public class CommentController {
@@ -34,7 +43,9 @@ public class CommentController {
 
     @PostMapping("/comments")
     public String saveComment(@RequestParam("postId") Long postId,
-                              @RequestParam("commentText") String commentText) {
+                              @RequestParam("commentText") String commentText
+                              ) {
+
         Problem problem = problemRepository
                 .findById(postId)
                 .orElseThrow(() -> new RuntimeException("No post with id: " + postId));
@@ -42,6 +53,7 @@ public class CommentController {
         Comment comment = new Comment();
         comment.setProblem(problem);
         comment.setText(commentText);
+        comment.setCreated(ZonedDateTime.now(ZoneId.of("UTC")));
 
         commentRepository.save(comment);
 
